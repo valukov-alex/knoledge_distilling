@@ -90,7 +90,7 @@ def train_soft_labels(distill_model, teacher_model, train_loader, val_loader,
     teacher_model - модель, которая генерирует "мягкие" ответы
     T - температура
     alpha - коэфициент перед ошибкой:
-        loss = alpha * soft_loss + (1 - alpha) * hard_loss
+        loss = alpha * soft_loss * (T**2) + (1 - alpha) * hard_loss
     """
 
     optimizer = optim.Adam(distill_model.parameters(), lr=lr)
@@ -123,7 +123,7 @@ def train_soft_labels(distill_model, teacher_model, train_loader, val_loader,
             correct += (answers == labels).sum().item()
 
         train_acc = correct/total
-        ce_loss, acc = test_model(distill_model, val_loader)
+        ce_loss, acc = test_model(distill_model, val_loader, device)
 
         val_acc.append(acc)
 

@@ -61,7 +61,7 @@ def train_hard_labels(model, train_loader, val_loader, num_epochs, lr,
             running_loss += loss.item()
 
         train_acc = correct/total
-        ce_loss, acc = test_model(model, val_loader)
+        ce_loss, acc = test_model(model, val_loader, device)
 
         val_acc.append(acc)
 

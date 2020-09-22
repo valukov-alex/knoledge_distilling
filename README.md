@@ -12,8 +12,8 @@
 предлагается использовать "мягкие" - распределение вероятностей от обучающего алгоритма.
 Использовав сочетание мягких лейблов с твердыми можно обучить небольшой алгоритм/сеть быстрее
 и добиться лучших результатов.
->$loss = alpha * soft\_loss * T^2 + (1 - alpha) * hard\_loss$  
->$soft\_loss = CrossEntropy(Softmax(distill\_logits/T), Softmax(teacher\_logits/T))$
+>$$loss = alpha * soft\_loss * T^2 + (1 - alpha) * hard\_loss$$ 
+>$$soft\_loss = CrossEntropy(Softmax(distill\_logits/T), Softmax(teacher\_logits/T))$$
 ## Задача
 В качестве задачи я выбрал классификацию изображений на датасете [imagewoof](https://github.com/fastai/imagenette).  
 Выбрал изображения, т.к. раньше работал с ними.

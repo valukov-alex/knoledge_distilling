@@ -11,9 +11,10 @@
 Таким образом, помимо "твердых" лейблов с 1 в правильном классе и 0 в остальных,
 предлагается использовать "мягкие" - распределение вероятностей от обучающего алгоритма.
 Использовав сочетание мягких лейблов с твердыми можно обучить небольшой алгоритм/сеть быстрее
-и добиться лучших результатов.
-![formula](https://render.githubusercontent.com/render/math?math=%5Clarge%20loss%20=%20alpha%20*%20soft%5C_loss%20*%20T%5E2%20+%20(1%20-%20alpha)%20*%20hard%5C_loss)
-![formula](https://render.githubusercontent.com/render/math?math=\large%20soft%5C_loss%20=%20CrossEntropy(Softmax(distill%5C_logits/T),%20Softmax(teacher%5C_logits/T)))
+и добиться лучших результатов.  
+
+>![formula](https://render.githubusercontent.com/render/math?math=%5Clarge%20loss%20=%20alpha%20*%20soft%5C_loss%20*%20T%5E2%20+%20(1%20-%20alpha)%20*%20hard%5C_loss)
+>![formula](https://render.githubusercontent.com/render/math?math=\large%20soft%5C_loss%20=%20CrossEntropy(Softmax(distill%5C_logits/T),%20Softmax(teacher%5C_logits/T)))
 ## Задача
 В качестве задачи я выбрал классификацию изображений на датасете [imagewoof](https://github.com/fastai/imagenette).  
 Выбрал изображения, т.к. раньше работал с ними.
